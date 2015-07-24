@@ -12,11 +12,15 @@
 
   <div class="syntax">
 <h2>Syntax</h2>
-<pre class="language-markup"><code>{% raw %}&#123;module_ratingrank render=&quot;item&quot; collection=&quot;my_custom_collection_name&quot; imageFolder=&quot;/ratingImages/&quot; template=&quot;/folder/template.tpl&quot;&#125;{% endraw %}</code></pre><p class="alert alert-info"><strong>Note:</strong> When using named parameters always wrap the individual parameters in double quotes. Also, do note that modules using <a href="/developers/beta/modules-and-named-parameters">named parameters</a> do not work for campaigns just yet.</p>
+<pre class="language-markup"><code>{% raw %}&#123;module_ratingrank render=&quot;item&quot; collection=&quot;my_custom_collection_name&quot; objectId=&quot;ItemID&quot; objectType=&quot;ItemType&quot; imageFolder=&quot;/ratingImages/&quot; template=&quot;/folder/template.tpl&quot;&#125;{% endraw %}</code></pre><p class="alert alert-info"><strong>Note:</strong> When using named parameters always wrap the individual parameters in double quotes. Also, do note that modules using <a href="/developers/beta/modules-and-named-parameters">named parameters</a> do not work for campaigns just yet.</p>
 </div>
 <div class="parameters">
 <h2>Parameters</h2>
 <ul>
+    
+    
+<li><strong>objectId</strong> - The ID of the BC module ItemID, this could be a product ID, a web app item ID, an event ID... and so on. You can easily find an items ID in the admin by looking at the url.</li>    
+<li><strong>objectType</strong> - The ID value representing the type of module for the item. Each module such as an event or a web app you create has its own ID to represent it's type.</li>
 <li><strong>render</strong> - for this module this can only be <em>item</em>. For more information on how to use this parameter take a look at the <a href="/developers/liquid/render-parameter">render parameter's article</a> for more details on how to use it</li><li><strong>collection</strong> - use this if you need to <a href="/developers/liquid/getting-started-with-liquid#available_tags" title="Get a module's output tags">access the module's Liquid output tags</a></li>
     <li><strong>imageFolder</strong> - the path to your directory of custom star images to be used. For instance,&#123;module_ratingrank, /images/stars&#125; would use images located inside the directory <em>/images/stars</em> instead of the default image files. When using this parameter, ensure that your custom images use these exact names:
       <ul>
